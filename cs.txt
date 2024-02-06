@@ -19,7 +19,7 @@ VA vs PT :- Vulnerability Assesment vs Penetration Testing (Pen testing)
 
 ---> Stopping the exploitation is called penetration testing.
 
----> To find and exploit vulnerabilities in a computer system penetration testing.
+---> To find and exploit vulnerabilities in a computer system is called penetration testing.
 
 
 Security Testing Methodology :-
