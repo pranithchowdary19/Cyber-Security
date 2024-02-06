@@ -27,8 +27,9 @@ Security Testing Methodology :-
 
 1. Planning
 2. Gathering information
-3. Reporting
-4. Discovering Vulnerabilities.
+3. Discovering Vulnerabilities
+4. Reporting.
+
 
 Web Application Testing Methodology :-
 --------------------------------------
