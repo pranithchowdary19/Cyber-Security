@@ -1,0 +1,58 @@
+OWASP :- Open web appication security project.
+
+owasp - open web application security project (Testing)
+
+vulnerability :- 
+----------------
+
+---> It is a flaw in a system that can leave it open to attack.
+
+Exploit :-
+----------
+
+---> it's a piece of software that takes advantage of a bug and causes unintented or unanticipated behavior.
+
+VA vs PT :- Vulnerability Assesment vs Penetration Testing (Pen testing)
+-----------
+
+---> Finding the vulnerability is called vulnerability assesment.
+
+---> Stopping the exploitation is called penetration testing.
+
+---> To find and exploit vulnerabilities in a computer system penetration testing.
+
+
+Security Testing Methodology :-
+-------------------------------
+
+1. Planning
+2. Gathering information
+3. Reporting
+4. Discovering Vulnerabilities.
+
+Web Application Testing Methodology :-
+--------------------------------------
+
+1. Information gathering
+2. Planning
+3. Vulnerability Detection
+4. Penetration Testing
+5. Reporting.
+
+Application Penetration Testing Methodology :-
+---------------------------------------------
+
+1. Information Gathering
+2. Threat Modeling
+3. Vulnerability Analysis
+4. Exploitation
+5. Post Exploitation
+6. Reporting.
+
+---> DAST/Blackbox - Dynamic Application Security Testing.
+
+---> If we dont know anything about the application and trying to comprimise the application is called DAST.
+ 
+---> SAST/WhiteBox :- Static Application Security Testing.
+
+---> Here we know about the application like sorce code plugins and ETC and trying to comprimise the application is called SAST.
