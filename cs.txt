@@ -56,3 +56,61 @@ Application Penetration Testing Methodology :-
 ---> SAST/WhiteBox :- Static Application Security Testing.
 
 ---> Here we know about the application like sorce code plugins and ETC and trying to comprimise the application is called SAST.
+
+
+Web Application :-
+------------------
+
+---> The web application is a program that performs any specific fuction using a web browser.
+
+---> Web applications are usually coded in browser supported language such as Javascript and HTML.
+
+
+Web Application Vs Website :-
+-----------------------------
+
+Web Application :- We can do some actions like login,acess the data and ETC.
+
+Website :- We can get the information. But cant do any actions.
+
+Methods :-
+----------
+
+GET :-
+------
+
+---> GET Method is used to request the data from specified resource.(It is used to retrive the data from server)
+
+---> GET requests can be cached.
+
+---> GET request remain in browser history.
+
+POST :-
+--------
+
+---> POST method is used to send data to server.
+
+---> POST method is used to create a resource.
+
+---> PUT method is used to update resource.
+
+HTTP Headers :-
+---------------
+
+---> The HTTP Headers are 4 types :-
+
+1. General Header
+
+2. Client-Request Header
+
+3. Server-Response Header
+
+4. Entity Header.
+
+---> General Header :- Which is applicable for both request and response is called general header.
+
+---> Client-Request Header :- It is applicable for client requests.
+
+---> Server-Response Header :- It is applicable for your responses.
+
+---> Entity Header :- Its tells about body meta data.
