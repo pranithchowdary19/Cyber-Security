@@ -115,3 +115,78 @@ HTTP Headers :-
 ---> Server-Response Header :- It is applicable for your responses.
 
 ---> Entity Header :- Its tells about body meta data.
+
+Cookies :-
+----------
+
+---> Cookies are small files that the website store on your computer to identify you quickly.
+
+---> Inside the cookie we have session Id.
+
+* HTTP is stateless. It wont remember you. Thats the reason we use cookies.
+
+---> Cookies can store your credentials for some time.
+
+
+RECON :-
+--------
+
+---> Recon is nothing but a information gathering.
+
+---> Reconnaissance is a set of processes and techniques used to covertly discover and collect information about a target system.
+
+---> There are two types of recons :-
+
+1. Active Recon
+2. Passive Recon
+
+---> Active Recon :- In this, we are directly intract with application and gain the information.
+
+---> This information is relevant and accurate.
+
+---> It is risky process.
+
+---> Passive Recon :- In this, we are indirectly intract with application and gain information.
+
+---> In this recon we get the information from publicly available sources.
+
+---> It is not risky.
+
+---> Netcraft - It is a website, Here we get some information like hostnames, Ip addresses and ETC.
+
+---> Whois Lookup 
+
+Dorking :- 
+
+---> How google search works is 
+
+1. URL - https://annualreport.stocklight.com
+2. Title - HP Annual Report 2022
+3. Text - HP Annual Report 2022. Form 10-K (NYSE:HPQ). Published: December 6th, 2022
+
+---> Inurl - It looks for mentioned words inside the URL of any websites.
+
+Eg :- ajio.com inurl:login
+
+---> Intitle - It searches for any specfic word inside the page title.
+
+Eg :- ajio.com intitle:shirts
+
+---> Intext - It can perform queries helps to search for specfic text inside any page.
+
+Eg :- ajio.com intext:price
+
+---> Filetype - You can use this dork to find any kind of filetypes.
+ 
+Eg :- hp annual reports filetype:pdf
+
+---> If we want to see sub domains then we can use VIRUSTOTAL Website and DNSdumpster.com
+
+---> GHDB - Google Hacking Database.
+
+Censys.IO :-
+------------
+
+---> Censys is a platform that helps to find the information about security practitioners discover, monitor, and analyze devices that are accessable from the internet.
+
+
