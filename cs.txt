@@ -156,12 +156,16 @@ RECON :-
 
 ---> Whois Lookup 
 
+
 Dorking :- 
+----------
 
 ---> How google search works is 
 
 1. URL - https://annualreport.stocklight.com
+
 2. Title - HP Annual Report 2022
+
 3. Text - HP Annual Report 2022. Form 10-K (NYSE:HPQ). Published: December 6th, 2022
 
 ---> Inurl - It looks for mentioned words inside the URL of any websites.
@@ -180,6 +184,7 @@ Eg :- ajio.com intext:price
  
 Eg :- hp annual reports filetype:pdf
 
+
 ---> If we want to see sub domains then we can use VIRUSTOTAL Website and DNSdumpster.com
 
 ---> GHDB - Google Hacking Database.
@@ -190,3 +195,25 @@ Censys.IO :-
 ---> Censys is a platform that helps to find the information about security practitioners discover, monitor, and analyze devices that are accessable from the internet.
 
 
+Installation of Kali linux :- 
+----------------------------
+
+1. Download the latest version of virtual box.
+
+2. Extract the kali linux zip file.
+
+3. Open the extracted file and select the linux file with 3kb. Its done.
+
+---> Default user name - Kali
+
+---> Default password - Kali
+
+---> "Whatweb" is an command that we uses in CLI to find the information about applications such as IP addresses, HTTPserver Name, Cookies, Protocols, Scripts, Title and ETC.
+
+---> While using this command extention is mandatory. (.com, .org, .in).
+
+Eg :- whatweb facebook.com, whatweb flipkart.com
+
+---> Wappalyzer - It is simple browser extenstion.
+
+---> It is a tools to gather information about application.
