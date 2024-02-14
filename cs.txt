@@ -214,6 +214,49 @@ Installation of Kali linux :-
 
 Eg :- whatweb facebook.com, whatweb flipkart.com
 
+
 ---> Wappalyzer - It is simple browser extenstion.
 
----> It is a tools to gather information about application.
+---> It is a tool to gather information about application.
+
+
+
+Dirbuster :-
+------------
+
+---> It is directory penetration testing tool. it finds all directories in web application.
+
+---> It is a brute force directories and files names on web/application servers.
+
+---> It identifies the directories with the help of wordlist file. we can find the wordlist file in - Filesystem ---> Usr ---> Share ---> wordlists ---> Dirbuster ---> directory list.
+
+---> brute force :- Attackers using excessively forceful attempts to gain access to user accounts.
+
+Usage :-
+--------
+
+---> Target URL - Here we need to give URL that we want to search.
+
+Eg :- http://testfire.com
+
+---> File with list of dirs/files ---> Here we give the path of wordlists.
+
+---> Eg :- Filesystem ---> Usr ---> Share ---> wordlists ---> Dirbuster ---> directory list.
+
+
+LBD :- 
+------
+
+---> LBD - Load Balancer Detector.
+
+---> It is a simple tool to find about any application using load balancer or not.
+
+---> Eg :- lbd flipkart.com
+
+
+Wafw00F :-
+---------
+
+---> It is a simple tool to find about any application using firewall or not.
+
+---> Eg:- wafw00f dell.com
