@@ -260,3 +260,58 @@ Wafw00F :-
 ---> It is a simple tool to find about any application using firewall or not.
 
 ---> Eg:- wafw00f dell.com
+
+
+nmap :-
+------
+
+---> nmap :- Network mapper. Nmap is used to identify the live hosts, ports and os versions that applications using.
+
+---> By default nmap checks only 1000 well known ports.
+
+---> If we didnt mention any scan type than default scan is SYN Scan. 
+
+---> There are two types of scans :-
+
+1. Syn Scan
+
+2. TCP Scan
+
+---> SYN Scan :- This scan is two way handshake (1.Syn packet, 2.Syn ack)
+
+---> Before using the Syn scan make sure that we need root privileges. For that use this command to switch to root account - sudo su.
+
+---> Syn Scan is faster.
+
+---> Eg :- nmap -sS testfire.net (nmap -> Command, -s -> Here we mention the scan type, testfire.net - Here we need to mention website name).
+
+---> TCP Scan :- This scan is three way handshake (1. Syn packet, 2. Syn ack, 3. Response Acknowledged)
+
+---> Eg :- nmap -sT testfire.net
+
+---> To do TCP scan we don't need root privilegs.
+
+
+Zenmap :-
+---------
+
+---> It is same as nmap but it is GUI.
+
+---> To see the IP address in kali linux we use this command - ifconfig. In windows the command is ipconfig.
+
+---> nmap -sV 10.1.10.88/24  ---> nmap ---> command, -s Scan type, -V ---> It shows the version(Need to use caps V), 10.1.10.88/24 ---> website IP.
+
+---> nmap -sV -A -O 10.1.10.88/24 ---> nmap -> command, -s Scan type, -V --> It shows the version(Need to use caps V), -A,-O ---> It shows the OS and OS version (Here we can use 'A' or 'O' both shows the same content), 10.1.10.88/24 --> website IP.
+
+---> nmap -p 3000-4000 10.1.10.80 ---> nmap -> command, -p ---> it shows the ports(If you want check between specfic ports from 3000 to 4000), 10.1.10.88/24 --> website IP.
+
+---> Eg :- nmap -p 1-65535 10.1.10.80
+
+---> nmap -p 1-65535 -T5 10.1.10.80 ---> nmap -> command, -p ---> it shows the ports(If you want check between specfic ports from 3000 to 4000), -T5 ---> If we want to scan more faster we use this(T stands for timing templates), 10.1.10.88/24 --> website IP
+
+---> T0 - Paranoid
+---> T1 - Sneaky
+---> T2 - Polite
+---> T3 - Normal
+---> T4 - Aggressive
+---> T5 - Insane.
