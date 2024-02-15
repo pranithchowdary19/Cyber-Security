@@ -128,8 +128,8 @@ Cookies :-
 ---> Cookies can store your credentials for some time.
 
 
-RECON :-
---------
+RECON (Phase - 2) :-
+--------------------
 
 ---> Recon is nothing but a information gathering.
 
@@ -315,3 +315,52 @@ Zenmap :-
 ---> T3 - Normal
 ---> T4 - Aggressive
 ---> T5 - Insane.
+
+
+Discovering vulnerabilities (phase - 3) :-
+------------------------------------------
+
+A2 - Broken Authentication :-
+-----------------------------
+
+Authentication :-
+-----------------
+
+---> Authentication is nothing but verifing the identity.
+
+---> We can identify the users by thier username and password.
+
+HTTP Basic Authentication :-
+----------------------------
+
+---> In this method client always provide the username and password when making the request.
+
+---> For every request username and password will send to server, that will send by Authentication header.
+
+** Authentication : Basic ---> If we see Authentication header along with basic than it is called HTTP Basic Authentication.
+
+
+Encoding :-
+-----------
+
+---> Converting your data into another format. here we use base64.
+
+---> Eg :- original format - 125485abc  Encoded format - cdcsd6554dfsdvd5sd4
+
+
+Encryption :-
+-------------
+
+---> Converting your data into cipher text. (AES)
+
+---> It is two way process encrypt and decrypt.
+
+Hashing :-
+----------
+
+---> Conventing your data into different format. (SHA512 - Secure hasing algorithm)
+
+---> It is one way process.
+
+
+---> To do these actions we use "Cyberchef".
