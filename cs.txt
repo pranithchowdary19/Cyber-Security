@@ -414,4 +414,47 @@ Username Enumeration through password reset :-
 
 1. Password Reset
 
-2. Login Page.
+2. Login Page
+
+3. Sign Up page.
+
+---> First we need to know weather the username or email id is already existing or not.
+
+---> Open any website (Snapchat) and press login and give any random username to check is it available or not.
+
+---> If the given username is not found we get a message like this "We cannot find an account for this email address" ---> If we get this kinda response than we knew that user is not existing.
+
+---> If the gave an username and if we get a message like this "If we have an account for the username or email address you provided we have emailed a link to reset your password." ---> If we get this kinda response than we did not know that user is existing or not. (Perfect Implementation)
+
+---> If we want check multiple user combinations we can use burp.
+
+Login page user enumeration :-
+------------------------------
+
+---> In this enumeration we can find weather username or email id existing or not at sign up page.
+
+---> While creating the user we need to give the information Like Name , emailid etc at the creation time, If it already availble than we know that user is already existing.
+
+Ensure if the data is sent through a secure channel :-
+------------------------------------------------------
+
+---> Post method is used for sending the data and it is secure.
+
+---> We can change Post method into GET method by using burp tool. It has a default option.
+
+---> If the data is send in GET method then that application has vulnerability.
+
+---> Using HTTPS
+
+Session Invalidation (Using Cookies - Pre & Post Logout) :-
+----------------------------------------------------------
+
+---> If we logged out from the session and still we are seeing the same data than it is called session invalidation.
+
+---> If we logged out from the session than cookies also be deleted, If the cookies still availble than that application has vulnerability. 
+
+Account Lockout :-
+------------------
+
+---> If we enters the wrong password for multiple time than the account got locked.
+
