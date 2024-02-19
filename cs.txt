@@ -108,11 +108,11 @@ HTTP Headers :-
 
 4. Entity Header.
 
----> General Header :- Which is applicable for both request and response is called general header.
+---> General Header :- The headers which are present in both request and response is called general header.
 
 ---> Client-Request Header :- It is applicable for client requests.
 
----> Server-Response Header :- It is applicable for your responses.
+---> Server-Response Header :- It is applicable for your server responses.
 
 ---> Entity Header :- Its tells about body meta data.
 
@@ -153,6 +153,8 @@ RECON (Phase - 2) :-
 ---> It is not risky.
 
 ---> Netcraft - It is a website, Here we get some information like hostnames, Ip addresses and ETC.
+
+Eg :- https://sitereport.netcraft.com/
 
 ---> Whois Lookup 
 
@@ -237,7 +239,7 @@ Usage :-
 
 ---> Target URL - Here we need to give URL that we want to search.
 
-Eg :- http://testfire.com
+Eg :- http://testfire.net
 
 ---> File with list of dirs/files ---> Here we give the path of wordlists.
 
@@ -343,7 +345,9 @@ HTTP Basic Authentication :-
 Encoding :-
 -----------
 
----> Converting your data into another format. here we use base64.
+---> Converting your data into another format. Here we use base64.
+
+---> Eg :- ToBase64 - Pranith, FromBase64 - UHJhbml0aA==
 
 ---> Eg :- original format - 125485abc  Encoded format - cdcsd6554dfsdvd5sd4
 
@@ -355,6 +359,17 @@ Encryption :-
 
 ---> It is two way process encrypt and decrypt.
 
+---> Eg :- AES Encrypt - Pranith(input), AES Decrypt - 62437b89a709277468362ca9ea7e9b60(Output) 
+
+
+---> In AES encrypt 128 bit key contains 32 charcters. (16 bytes = AES-128)
+
+---> In AES encrypt 192 bit key contains 48 charcters. (24 bytes = AES-192)
+
+---> In AES encrypt 256 bit key contains 64 charcters. (32 bytes = AES-256)
+
+---> For all bits IV contains 32 charcters.
+
 Hashing :-
 ----------
 
@@ -363,4 +378,40 @@ Hashing :-
 ---> It is one way process.
 
 
----> To do these actions we use "Cyberchef".
+---> To do these actions we use "Cyberchef" - (Web Application).
+
+
+Cookie Based Authentication :-
+------------------------------
+
+---> In cookie based authentication cookie is the header.
+
+---> Cookie is created by server.
+
+---> Cookie contains session ID.
+
+---> Session Id is unique for everyone.
+
+---> Session Id has expiration date.
+
+---> When browser send request to server, Sever put the SET Cookie header.
+
+HTTP vs Local Storage :-
+
+Token :-
+
+Header, Payload, Signature
+
+Brute force attacks using burp.
+
+
+Username Enumeration through password reset :-
+----------------------------------------------
+
+---> Finding the username or email id is called username enumeration.
+
+---> There are two ways :-
+
+1. Password Reset
+
+2. Login Page.
