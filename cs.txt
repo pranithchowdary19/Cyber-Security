@@ -339,7 +339,7 @@ HTTP Basic Authentication :-
 
 ---> For every request username and password will send to server, that will send by Authentication header.
 
-** Authentication : Basic ---> If we see Authentication header along with basic than it is called HTTP Basic Authentication.
+** Authentication : Basic Base64(Key) ---> If we see Authentication header along with basic than it is called HTTP Basic Authentication.
 
 
 Encoding :-
@@ -396,13 +396,52 @@ Cookie Based Authentication :-
 
 ---> When browser send request to server, Sever put the SET Cookie header.
 
-HTTP vs Local Storage :-
+Cookies vs Local Storage :-
+---------------------------
 
-Token :-
+---> All the cookies will store at cookie storage or cookie jar.
 
-Header, Payload, Signature
+---> Cookies are safe when we store in local storage.
 
-Brute force attacks using burp.
+---> if you want to see a cookie in browser, open any application ---> Right click and select inspect option ---> goto console ---> use this command document.cookie. (We get the cookie)
+
+---> Cookies are stored in browser as well as sever also.
+
+Token Based Authentication :-
+----------------------------
+
+---> In token based authentication everthing is stored locally, The server stores only signature.
+
+
+** Authentication : Bearer : Base64(Key) ---> If we see this kinda authentication than it is a Token based authentication.
+
+---> The popular token based authentication is JWT (Jason Web Tokens).
+
+---> Token is more lengthy than cookie.
+
+---> JWT has there components they are :- (HPS)
+
+1. Header
+
+2. Payload
+
+3. Signature
+
+---> To encode the JWT we have one web application called "JWT.IO" .
+
+
+---> Tokens has more expiration time than cookies. Which is not good.
+
+---> Token never stored in server. Server stores only signature.
+
+
+Brute force attacks using burp :- Test Cases :-
+---------------------------------
+
+Using Default Usernames and passwords :-
+---------------------------------------
+
+
 
 
 Username Enumeration through password reset :-
@@ -410,7 +449,7 @@ Username Enumeration through password reset :-
 
 ---> Finding the username or email id is called username enumeration.
 
----> There are two ways :-
+---> There are three ways :-
 
 1. Password Reset
 
@@ -424,7 +463,7 @@ Username Enumeration through password reset :-
 
 ---> If the given username is not found we get a message like this "We cannot find an account for this email address" ---> If we get this kinda response than we knew that user is not existing.
 
----> If the gave an username and if we get a message like this "If we have an account for the username or email address you provided we have emailed a link to reset your password." ---> If we get this kinda response than we did not know that user is existing or not. (Perfect Implementation)
+---> If you gave an username and if we get a message like this "If we have an account for the username or email address you provided we have emailed a link to reset your password." ---> If we get this kinda response than we did not know that user is existing or not. (Perfect Implementation)
 
 ---> If we want check multiple user combinations we can use burp.
 
@@ -458,3 +497,35 @@ Account Lockout :-
 
 ---> If we enters the wrong password for multiple time than the account got locked.
 
+---> It is more like prevention technique. To stop the brute force attacts.
+
+Password change does not require current password :-
+----------------------------------------------------
+
+---> A current password is a code that you use when logging ​on to your ​computer or online accounts.
+
+---> If we want to change password then application asks to enter your current password and new password and re-enter password.
+
+---> If the current password is wrong than application wont accepts and it displays the message ("Old password is incorrect"). [Good Implementation]
+
+---> If you want to change a password for any application, If that application wont asks for current password and accepts to enter new password than it is bad implementation.
+
+
+Insecure Forgot password functionality :-
+-----------------------------------------
+
+---> If we are using shared system than we use this kinda attact.
+
+
+ClearText Transmission of session token/Session token in URL :-
+---------------------------------------------------------------
+
+---> If the session Id is visable in URL than that application is not secure. (Bad Implementation)
+
+
+Post Authenticated URL's :-
+---------------------------
+
+--->  If we login into any application (Flipkart) and added some items to wishlist and agian logged out. If anyone copy the login URL and try to login with that URL after you logged out and it shows your information than it is bad implementation.
+
+---> Once we logged out from application, again trying to login with old url than application should redirects to login page, If it does than it is secure.
