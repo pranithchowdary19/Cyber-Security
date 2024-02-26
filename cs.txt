@@ -514,7 +514,7 @@ Password change does not require current password :-
 Insecure Forgot password functionality :-
 -----------------------------------------
 
----> If we are using shared system than we use this kinda attact.
+---> If we are using shared system than we use this kinda attack.
 
 
 ClearText Transmission of session token/Session token in URL :-
@@ -529,3 +529,78 @@ Post Authenticated URL's :-
 --->  If we login into any application (Flipkart) and added some items to wishlist and agian logged out. If anyone copy the login URL and try to login with that URL after you logged out and it shows your information than it is bad implementation.
 
 ---> Once we logged out from application, again trying to login with old url than application should redirects to login page, If it does than it is secure.
+
+
+A1 : Injection :-
+-----------------
+
+SQL INJECTION :- SQLI
+----------------
+
+---> SQL ---> Structured query language.
+
+---> Database is a collection of tables, Table is collection of rows and coloumns.
+
+---> If i want to get all the data than we use this query "Select *"
+
+Eg :- Select * from student;
+
+Eg :- Select * from student where id='2';
+
+Eg :- Select * from student where Sbranch='CSE';
+
+
+Types of SQLI's :-
+------------------
+
+1. Error based SQL injection
+
+2. UNION-based SQL injection
+
+3. Blind SQL injection
+
+4. Out-of-band SQL injection.
+
+
+---> Error based SQL injection :- In this type of injection first we need to find the vulnerability.
+
+Eg Site :- https://www.lghk.com/index.php
+
+---> https://www.lghk.com/product.php?id=121 ---> If we see URL like this in the end id we can add semi colon. (https://www.lghk.com/product.php?id=121')
+
+---> At the end if we add any special charcters like (') than we get syntax errors. There is a posibility to know about information.
+
+Eg :- https://www.lghk.com/product.php?id=121' If we add extra charcter there we get this error.
+
+---> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1 (Error massage)
+
+
+---> Find how many coloumns in that application, and find which coloumn is vulnerable to do SQLI.
+
+---> To find how many coloumns is available we use order by.
+
+---> if we find any vulnability in error based sqli than we do Order by.
+
+---> Eg :- https://www.lghk.com/product.php?id=121&pid=0 order by 18
+
+
+---> To find which coloumn is vulnerable we use union select.
+
+---> Union select basically combines two or more tables (Select statements) and 
+getting the data.
+
+---> https://www.lghk.com/product.php?id=121&pid=-0 union select 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17+--
+
+---> In this we found 16 coloumn has vulnerability.
+
+---> So now we need to give input in vulnerable coloumn.
+
+---> To find the version of DB we can do like this.
+
+Eg:- https://www.lghk.com/product.php?id=121&pid=-0 union select 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,@@version,17
+
+
+** Hashes.com --> It decodes the hash and gives us passwords.
+
+
+
