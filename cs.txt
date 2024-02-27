@@ -561,8 +561,8 @@ Types of SQLI's :-
 
 4. Out-of-band SQL injection.
 
-
----> Error based SQL injection :- In this type of injection first we need to find the vulnerability.
+Error based SQL injection :- In this type of injection first we need to find the vulnerability.
+----------------------------
 
 Eg Site :- https://www.lghk.com/index.php
 
@@ -574,6 +574,8 @@ Eg :- https://www.lghk.com/product.php?id=121' If we add extra charcter there we
 
 ---> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1 (Error massage)
 
+Order By :-
+-----------
 
 ---> Find how many coloumns in that application, and find which coloumn is vulnerable to do SQLI.
 
@@ -583,6 +585,8 @@ Eg :- https://www.lghk.com/product.php?id=121' If we add extra charcter there we
 
 ---> Eg :- https://www.lghk.com/product.php?id=121&pid=0 order by 18
 
+Union Based SQL Injection :-
+----------------------------
 
 ---> To find which coloumn is vulnerable we use union select.
 
@@ -602,6 +606,45 @@ Eg:- https://www.lghk.com/product.php?id=121&pid=-0 union select 1,2,3,4,5,6,7,8
 
 ** Hashes.com --> It decodes the hash and gives us passwords.
 
+---> Step - 1 ---> Inject a single quote (') or double quote (") .
+
+---> Step - 2 ---> Find the number of coloumns by using Order By
+
+---> Step - 3 ---> Union select to find vulnerability.
+
+---> Step -4 ---> After getting vulnerable coloumn, than inject the queries and get the data.
+
+
+Blind SQL Injection :-
+----------------------
+
+---> There are two types :-
+
+1. Boolean Based
+
+2. Time Based
+
+Boolean Based :-
+----------------
+
+---> 1' or 1=1-- 
+
+---> OR Gate - If any thing is true, It is true.
+
+---> AND Gate - If any thing is wrong, It is wrong.
+
+Time Based :-
+-------------
+
+---> In this injection we are communicating with database with an time interval.
+
+---> In this we stop the database for a while.
+
+---> We are asking the database to respond after 10 seconds.
+
+---> Payload box -- github/payloadbox.
+
+
 DVWA :-
 -------
 
@@ -619,3 +662,4 @@ SQL MAP :-
 ---> sqlmap -d - It is command used for domain.
 
 ---> sqlmap -u - It is for URL.
+
