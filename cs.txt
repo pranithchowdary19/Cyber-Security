@@ -602,5 +602,20 @@ Eg:- https://www.lghk.com/product.php?id=121&pid=-0 union select 1,2,3,4,5,6,7,8
 
 ** Hashes.com --> It decodes the hash and gives us passwords.
 
+DVWA :-
+-------
 
+---> DVWA - Damn vulnerable web application.
 
+---> DVWA is used to practice hacking techniques and tools.
+
+---> In DVWA security we can select the security modes.
+
+SQL MAP :-
+----------
+
+---> sqlmap is an automated tool.
+
+---> sqlmap -d - It is command used for domain.
+
+---> sqlmap -u - It is for URL.
