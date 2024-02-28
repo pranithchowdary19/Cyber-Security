@@ -654,6 +654,12 @@ DVWA :-
 
 ---> In DVWA security we can select the security modes.
 
+** After installation of DVWA, If you want to restart the DVWA, Open terminal and reload the server for that we use this command.
+
+---> Command - sudo service apache2 start, sudo service apache2 reload.
+
+---> Now open it in browser and give the Ip address - 127.0.0.1/Dvwa.
+
 SQL MAP :-
 ----------
 
@@ -663,3 +669,52 @@ SQL MAP :-
 
 ---> sqlmap -u - It is for URL.
 
+Eg :- sqlmap -u http://127.0.0.1/DVWA/login.php
+
+Eg :- sqlmap -u "http://127.0.0.1/DVWA/login.php" --cookie="PHPSESSID=dghgsgs56sg6" ---> This command is used to know the database.
+
+---> sqlmap - Command
+
+---> -u - Represents the URL.
+
+---> http://127.0.0.1/DVWA/login.php - here we give the URL in double quotes.
+
+---> --cookie="PHPSESSID=dghgsgs56sg6" - Here we give the cookie with session id.
+
+Eg :- sqlmap -u "http://127.0.0.1/DVWA/login.php" --cookie="PHPSESSID=dghgsgs56sg6" --dbs
+
+---> --dbs - It gives the information about all databases.
+
+Eg :- sqlmap -u "http://127.0.0.1/DVWA/login.php" --cookie="PHPSESSID=dghgsgs56sg6" -D DVWA -T users.
+
+---> -D - Here mention the database. (Caps D means database)
+
+---> -T - Here we can search for tables (Caps T)
+
+---> Users - Name of the table.
+
+** plus symbol (+) :- Concatenante
+
+** question mark Symbol (?) , And Symbol (&) :- Parameter.
+
+
+A3 - Sensitive Data Exposure :-
+-------------------------------
+
+---> The data which identifies the person is Personally Identified Information. (PII)
+
+---> There are different types of data :-
+
+1. Personally Identified Information (PII) - Personal info like contact number, address ETC.
+
+2. Financial Information - Card Numbers, Back account details, Expire dates and CVV numbers.
+
+3. Health Information - Health conditions, treatments and medical records.
+
+4. Intellectual Property - 
+
+5. Competition Information - Selling your product to other competitors before the product lauch.
+
+6. Legal Information - 
+
+7. IT Security Data - UserNames, Passwords, Encryption keys, network structure ETC.
