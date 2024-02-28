@@ -718,3 +718,35 @@ A3 - Sensitive Data Exposure :-
 6. Legal Information - 
 
 7. IT Security Data - UserNames, Passwords, Encryption keys, network structure ETC.
+
+GDPR :-
+-------
+
+---> GDPR - General Data Protection Regulation - It is an european law.
+
+Test Cases :-
+-------------
+
+1. Testing for password & Cryptographic storage - Data at Rest.
+
+2. Testing For HSTS (HTTP Strict Transport Security) - Any website if you try to access it on HTTP, It will convert into HTTPS. (Strict Transport Security)
+
+3. Testing For Cryptography - Converting your plain text into cryptographic format.
+
+---> Testing for password & cryptographic storage :- The passwords will store in different encrypted formats. 
+
+Eg:- SHA,AES, Salting and ETC. 
+
+---> Salting means it adds the prefix and suffix to your password.
+
+Eg :- Actual password - Pranith123  Salted password - ABCPranith123XYZ. (ABC - Prefix), (XYZ - Suffix).
+
+Cookie Flags :- 
+---------------
+
+1. HTTPonly - If we have this type of flag we can not access the cookie using java Script.
+
+2. Secure - This flag is used to, It sends the cookie in encrypted format not in plain text format.
+
+---> If secure flag is set it in false state than that cookie is in unencrypted state. It goes in plain text only.
+
