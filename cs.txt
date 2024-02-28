@@ -750,3 +750,31 @@ Cookie Flags :-
 
 ---> If secure flag is set it in false state than that cookie is in unencrypted state. It goes in plain text only.
 
+Testing for Weak Transport Layer Security :-
+--------------------------------------------
+
+---> Transport layers are SSL and TLS.
+
+---> TLS 1.2 and 1.3 are latest versions and vulnerability free.
+
+---> To check weather SSL and TLS are using cipers or not, To do that we use "SSLlabs.com"
+
+---> In kali linux we can check that the website supports which TLS is using.
+
+Eg :- nmap --script ssl-enum-ciphers -p 443 testfire.net
+
+Eg :- nmap --script ssl-enum-ciphers,ssl-cert,ssl-heartbleed -p 443 testfire.net
+
+Test Case - How is your card data is sending in website :- (NPI - Non - Personal information)
+----------------------------------------------------------
+
+---> Login to website and order any item goto checkout and pay page, There it will asks for your personal data.
+
+---> For test cards we use this website - https://coolgenerator.com/credit-card-generator.
+
+---> After giving the credit card details open the burp and capture the request.
+
+---> Check weather card details are sending in encrypted format or not.
+
+
+
