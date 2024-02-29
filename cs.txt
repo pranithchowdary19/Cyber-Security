@@ -698,6 +698,7 @@ Eg :- sqlmap -u "http://127.0.0.1/DVWA/login.php" --cookie="PHPSESSID=dghgsgs56s
 ** question mark Symbol (?) , And Symbol (&) :- Parameter.
 
 
+
 A3 - Sensitive Data Exposure :-
 -------------------------------
 
@@ -775,6 +776,35 @@ Test Case - How is your card data is sending in website :- (NPI - Non - Personal
 ---> After giving the credit card details open the burp and capture the request.
 
 ---> Check weather card details are sending in encrypted format or not.
+
+
+A6 - Security Misconfigurations :-
+----------------------------------
+
+Test Cases :-
+-------------
+
+1. Directory Listing - Index of
+
+---> In directory listing we can see all directories in web application.
+
+Eg : index of peaky blinders
+
+---> To see the directories in web, we use this in URL (wp-content/uploads/)--> Use this in the end of the URL.
+
+Eg :- https://www.bigsmartdeals.com/wp-content/uploads/  [WP - Word press].
+
+---> If directory listing disable on any website we get 403(Forbidden) error.
+
+Eg :- https://vardhaman.org/robots.txt
+
+---> This gives the data about allow or disallow
+
+
+2.
+3.
+4. Error Handling And Stack Traces :-
+
 
 
 
