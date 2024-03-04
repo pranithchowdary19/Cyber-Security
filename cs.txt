@@ -17,8 +17,6 @@ VA vs PT :- Vulnerability Assesment vs Penetration Testing (Pen testing)
 
 ---> Finding the vulnerability is called vulnerability assesment.
 
----> Stopping the exploitation is called penetration testing.
-
 ---> To find and exploit vulnerabilities in a computer system is called penetration testing.
 
 
@@ -729,10 +727,31 @@ Test Cases :-
 -------------
 
 1. Testing for password & Cryptographic storage - Data at Rest.
+-----------------------------------------------
 
-2. Testing For HSTS (HTTP Strict Transport Security) - Any website if you try to access it on HTTP, It will convert into HTTPS. (Strict Transport Security)
+---> In this we see weather user name and passwords are sending in cryptographic form or not.
 
-3. Testing For Cryptography - Converting your plain text into cryptographic format.
+--->  If the data is not sending in cryptographic form than the application has vulnerability.
+
+---> In this test case we dont have a access to database. so this test case is not possible to do.
+
+
+2. Testing For HSTS (HTTP Strict Transport Security) :-
+------------------------------------------------------
+
+---> Any website if you try to access it on HTTP, It will convert into HTTPS. (Strict Transport Security)
+
+---> Strict Transport security is header, If that header is not found then the data transports in other protocols.
+
+---> In Burp we can capture the request and send it to repeater there we can change the protocol on target and than check for that header.
+
+---> If that header is available it redirects from HTTP to HTTPS.
+
+
+3. Testing For Cryptography :-
+------------------------------
+
+---> Converting your plain text into cryptographic format.
 
 ---> Testing for password & cryptographic storage :- The passwords will store in different encrypted formats. 
 
@@ -742,6 +761,7 @@ Eg:- SHA,AES, Salting and ETC.
 
 Eg :- Actual password - Pranith123  Salted password - ABCPranith123XYZ. (ABC - Prefix), (XYZ - Suffix).
 
+
 Cookie Flags :- 
 ---------------
 
@@ -750,6 +770,7 @@ Cookie Flags :-
 2. Secure - This flag is used to, It sends the cookie in encrypted format not in plain text format.
 
 ---> If secure flag is set it in false state than that cookie is in unencrypted state. It goes in plain text only.
+
 
 Testing for Weak Transport Layer Security :-
 --------------------------------------------
@@ -766,8 +787,9 @@ Eg :- nmap --script ssl-enum-ciphers -p 443 testfire.net
 
 Eg :- nmap --script ssl-enum-ciphers,ssl-cert,ssl-heartbleed -p 443 testfire.net
 
-Test Case - How is your card data is sending in website :- (NPI - Non - Personal information)
-----------------------------------------------------------
+
+Unmasked NPI/PII/PHI - How is your card data is sending in website :- (NPI - Non - Personal information)
+--------------------------------------------------------------------------
 
 ---> Login to website and order any item goto checkout and pay page, There it will asks for your personal data.
 
@@ -784,7 +806,8 @@ A6 - Security Misconfigurations :-
 Test Cases :-
 -------------
 
-1. Directory Listing - Index of
+1. Directory Listing - Index of / :-
+------------------------------------
 
 ---> In directory listing we can see all directories in web application.
 
@@ -801,10 +824,123 @@ Eg :- https://vardhaman.org/robots.txt
 ---> This gives the data about allow or disallow
 
 
-2.
-3.
+2. Exposed Backup or Configuration Files :-
+--------------------------------------------
+
+---> This test case is used to find the backup files and configuration files of web application.
+
+---> To find these files we can use burp. In burp we can add multiple extensions in extensions tab.
+
+---> In extensions tab we can add the backup finder extension.
+
+---> Goto this link - https://github.com/moeinfatehi/Backup-Finder ---> goto releases and there you find file called Backup-Finder.jar --> Download that file and add in extensions.
+
+---> Open Burp ---> Capture the request ---> Right click and goto extentions ---> Backup finder.jar ---> Send to backup finder ---> Start.
+
+3. Default credentials :-
+-------------------------
+
+---> Try to login with default credentials like admin/admin, admin/123 ETC.
+
 4. Error Handling And Stack Traces :-
+-------------------------------------
+
+---> In this test case enter any gibberish data and see if it gives any response or not.
+
+
+5. Missing Security Headers :-
+-------------------------------
+
+---> There are 4 main headers
+
+1. Strict Transport Security
+
+2. X-Frame Options
+
+3. X-XSS Protection
+
+4. Content Security Policy
+
+
+Strict Transport Security :-
+-----------------------------
+
+---> This header will convert all HTTP requests into HTTPS.
 
 
 
+X-Frame Options :-  Click jacking
+------------------
 
+---> In this header the value should be in Deny or same origin state.
+
+---> Same Origin means it should match three constrains Protocols, Port Number and domain. these 
+
+---> If this header is not available than that site is vulnerable to do click jacking.
+
+---> Take the code and save it in notepad and in Iframe option give your URL and save the with .HTML extention (Eg :- Clickjacking.html).
+
+---> Code for click jacking.
+
+<html>
+    <head>
+        <title>Clickjack test page</title>
+    </head>
+    <body>
+        <iframe src="http://www.target.site" width="500" height="500"></iframe>
+    </body>
+</html>
+
+---> If any site loaded in I frame than vulnerable for click jacking.
+
+
+
+X-XSS Protection :- 
+-------------------
+
+---> In this header the value must be 1(True) not 0(False).
+
+---> This header stops the loading from excessive attacts.
+
+---> If content security policy is available than X-XSS protection is not mandatory.
+
+Eg :- X-XSS Protection : 1; mode = Block
+
+
+
+Content Security Policy :- 
+---------------------------
+
+---> The purpose of Content Security Policy is, we can say that where your resources can load from.
+
+---> If we dont know the code then use CSP Evaluator in browser.
+
+---> Capture a request in burp and check for this header. If it is not available than we can give it as missing security header.
+
+
+6. Version Disclosures / Sensitive Info Leak In Response Headers :-
+-------------------------------------------------------------------
+
+---> Capture the request in Burp and send it to reapeter and search for any header showing the versions of thier application.
+
+Eg :- Sever Header : Apache  --> Secure
+
+Eg :- Sever Header : Apache 2.1.8 --> Not secure.
+
+---> If it shows the info in reponse headers than that site is vulnerable.
+
+
+7. Outdated Software / Libraries :-
+------------------------------------
+
+---> In this test case first we need to find the which version is currently the application is using. 
+
+---> To know that we can use wapplyzer or netcraft ETC.
+
+---> If the application using the older versions than there is a chance to have vulnerabilities.
+
+Eg :- Currently Application using version - Cloud Flare 1.2.10
+
+Eg :- Latest version in market - Cloud Flare 2.1.3
+
+---> If the application is not using latest versions than we can say that application is using outdated versions.
