@@ -963,7 +963,7 @@ A7 - Cross Site Scripting (XSS) :-
 Stored or Persistent XSS :-
 ---------------------------
 
----> In stored xss it is stored in database permenantly. until it got deleted by developer
+---> In stored xss the injection is stored in database permenantly. until it got deleted by developer
 
 ---> Where do we perform cross site scripting ?
 
@@ -1010,3 +1010,33 @@ DOM-Based XSS (Document Object model) :-
 ----------------------------------------
 
 ---> 
+
+
+
+Cross Site Request Forgery (CSRF) :-  OWASP 2013
+------------------------------------
+
+---> CSRF is an attack that affects an end user to execute unwanted actions on web application.
+
+---> Sending a link via message, an attacker may trick the users of web application.
+
+---> In this attack we can update or change the user details without thier involvement or in bank sites we transfer the amount without thier credentials. (Depends on application functionality)
+
+---> In this attack we need two pre-requisites.
+
+1. User must be in Logged in state
+
+2. Click on particular link
+
+---> Goto any web application and create a account
+
+Eg :-
+------
+
+---> Open testfire ---> Login to testfire ---> transfer Funds ---> Select the from account and to account and amount to transfer ---> Before clicking transfer money captute the request in burp and send that request to repeater.
+
+---> Copy that request and open CSRF PoC Generator and change the values in request and save it in HTML format.
+
+---> Most important thing after saving that file again open that file in same browser where you already logged in.
+
+---> CSRF Poc Generator Link - https://tools.nakanosec.com/csrf/?source=post_page-----db464a61a582--------------------------------
