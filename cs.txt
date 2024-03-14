@@ -1040,3 +1040,79 @@ Eg :-
 ---> Most important thing after saving that file again open that file in same browser where you already logged in.
 
 ---> CSRF Poc Generator Link - https://tools.nakanosec.com/csrf/?source=post_page-----db464a61a582--------------------------------
+
+
+A5 - Broken Access Control
+--------------------------
+
+---> Authentication - Proving the identity
+
+---> Authorization - Proving the access (What kind a permission i have)
+
+* Authorization comes after authentication.
+
+---> To do authorization testing atleast we need 2 or 3 accounts.(Admin account,manager account, 2 normal users accounts)
+
+---> Broken access control has 4 types vulnerabilities :-
+
+1. Forced Browsing
+
+2. File Includes/ Directory Traversal/ Path Traversal
+
+3. Privilege Escalations
+
+4. IDOR (Insecure Direct Object References)
+
+
+Forced Browsing :- 
+------------------
+
+---> Forced browsing means where we can access a functionality which we dont have.
+
+---> Goto testfire.net ---> To do force browsing we need two or three accounts. So login with admin and jsmith credentials.
+
+---> After logged into two accounts see for the different functionalities.
+
+ ---> Admin has edit users option ---> open that option ---> copy that link and paste that link other users login (See if it is vulnerable or not)
+
+---> Take two accounts ---> Look for uncommon functionality in both accounts ---> After finding that uncommon functionality ---> Copy the URL of that umcommon functionality and paste it in other user account.
+
+---> If we got error (403 forbidden) doing forced browsing, capture the request in burp ---> Goto proxy ---> Turn the interceptor on ---> Capture the request ---> Right click and Do intercept --> Response to this request. (This option is used for capture the response from browser)
+
+
+Privilege Escalations :-
+------------------------
+
+---> In privilege escalations we have two types.
+
+1. Vertical Privilege Escalation
+
+2. Horizontal Privilege Escalation
+
+
+Vertical Privilege Escalation :-
+--------------------------------
+
+---> From lowest privilege user to highest privilege user.
+
+Eg :- If normal user getting manager privileges than it is called vertical privilege escalation.
+
+Eg :- If manager getting senior manager privileges than it is called vertical privilege escalation.
+
+
+Horizontal Privilege Escalation :-
+----------------------------------
+
+---> Gaining access to the rights of another account or machine with similar privileges.
+
+---> HPE will happend between similarly configured accounts.
+
+
+File Includes/ Directory Traversal/ Path Traversal :-
+-----------------------------------------------------
+
+--->  In this test case we need to find the directories of web application.
+
+---> Traversal - Moving from one directory to another directory.
+
+---> To change the directory we use this command (../../) --> Backside.
