@@ -1116,3 +1116,36 @@ File Includes/ Directory Traversal/ Path Traversal :-
 ---> Traversal - Moving from one directory to another directory.
 
 ---> To change the directory we use this command (../../) --> Backside.
+
+
+---> First check the application in Wappalyzer if it shows any application using Apache server or Nginx than that application is using Linux operating system.
+
+---> Linux - Apache, Ngnix (/etc/Passwd - Check this Path for linux OS)
+
+---> Windows - ISS (C:\windows\win.ini - Check this Path for windows OS)
+
+---> Where ever we have input fields we can try to put this ../
+
+---> See for the request parameters in URL. Parameters are starting with (?) symbol. To represent multiple parameters we can use (&) symbol.
+
+---> If parameters are not sending in URL then go and check in view page source.
+
+Eg :- View page source --> CTRL F --> ?
+
+---> After finding the parameters search that parameters in URL.
+
+---> Search for path parameter.
+
+---> In end of URL put ?path=../../  search.
+
+Eg :- URL End?path=../../../../etc/passwd
+
+Eg :- URL End?path=../../../C:/windows/win.ini
+
+
+
+IDOR (Insecure Direct Object References) :-
+-------------------------------------------
+
+---> If we use insecure way to predict the user id or information is called IDOR.
+
