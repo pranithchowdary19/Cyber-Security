@@ -1149,3 +1149,110 @@ IDOR (Insecure Direct Object References) :-
 
 ---> If we use insecure way to predict the user id or information is called IDOR.
 
+
+
+Business Logic vulnerabilities :-
+---------------------------------
+
+---> Business logic vulnerability is araised due to design flaws.
+
+---> Price manuplation, Cutomization ETC.
+
+---> Automation tools cant find the business logic vulnerabilities.
+
+
+
+A4 - XML External Entities :-
+-----------------------------
+
+XML External Entity Injection (XXE) :-
+--------------------------------------
+
+---> XXE web security vulneability that allows an attacker to interfere with an application processing of XML data but not Json data.
+
+---> There are two methods of transporting the data.
+
+1. XML (Extensible Markup Language)
+
+---> In XML data is transfered between tags.(<>(Starting), </>(Ending))
+
+Eg :- <html>
+
+</html>
+
+---> XML is used to store and transport the data.
+
+2. Json (Java script objecct notation)
+
+---> In json data is transfered in key-pair values.
+
+Eg :- 
+{
+ "user" : {
+   "name" : "lambert"
+   "bio"  : "The cook"
+  }
+}
+
+---> The above code is in json format. Any thing start with curly braces and ends with curly braces than it is json format.
+
+---> If we dont know in which format the data is transfering, Than capture the request in burp and look for content typer header.
+
+---> Content types header give the info about in which language data is transferring.
+
+Eg :- Content-Type : Application/json
+
+Eg :- Content-Type : Application/xml
+
+
+XML Entities :-
+---------------
+
+---> XML entities represents the open and close tags.
+
+---> < - less than symbols denotes as &lt.
+
+---> > - Greater than symbol denotes as &gt.
+
+---> Whatever data is written in between the tags(&lt and &gt) are called entities.
+
+Parser :-
+---------
+
+---> The parser is responsible for checking the syntax.
+
+
+Document Type Definition (DTD) :-
+---------------------------------
+
+---> The purpose of DTD is to define the structure of XML document.
+
+
+Process To Do :-
+----------------
+
+---> First need to check the data is transfering in XML or Not.
+
+---> Second find if it process the xml entitites or not.
+
+---> By using entities we can expose the sensitive data.
+ 
+---> Goto XXE payload box.
+
+---> Select any payload in paybox and paste it in burp.
+
+---> DTD name (Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (Hack is DTD name)
+
+---> if any thing in xml if we want to reference than we this symbol (&).
+
+---> Now check all the entities one by one.
+
+Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (first is the entity)
+
+
+---> If the application is sending data in json format we can convert json in XML format.
+
+---> To convert json to XML goto google and search for json to xml converter.
+
+---> We can do that burp also, In extensions tab we can add this content type converter extension.
+
