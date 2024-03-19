@@ -1269,3 +1269,23 @@ Server Side Request Forgery (SSRF) :-
 ---> SSRF attack is designed to target the server.
 
 ---> Whenever one application inter connects with other application than we can perform the SSRF.
+
+---> Burp functionality - If we captured the request in burp and send it to repeater, In repeater we did some changes and send it to server and we get response. If we want that see that response in browser there is functionality in burp. (Right click on response ---> Show response in browser ---> We get one URL, Copy that URL and paste it in browser)
+
+Process To Do :-
+----------------
+
+---> Capture the request in burp.
+
+---> Check where the URL is going.
+
+---> There is feature called collaborator in burp goto that and select copy to clipborad option there we get one link.
+
+---> Remove the URL and paste the URL from burp collaborator. Add http:// before pasting the URL.
+
+---> And send the request.
+
+---> After sending the request goto collabarator and click the poll now option.
+
+---> If the type shows DNS than it is not vulnerable, If the type shows HTTP than it is responding than we can say it is vulnerable. 
+
