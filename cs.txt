@@ -1269,4 +1269,3 @@ Server Side Request Forgery (SSRF) :-
 ---> SSRF attack is designed to target the server.
 
 ---> Whenever one application inter connects with other application than we can perform the SSRF.
-
