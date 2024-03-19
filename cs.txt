@@ -1182,6 +1182,7 @@ Eg :- <html>
 
 ---> XML is used to store and transport the data.
 
+
 2. Json (Java script objecct notation)
 
 ---> In json data is transfered in key-pair values.
@@ -1239,7 +1240,7 @@ Process To Do :-
  
 ---> Goto XXE payload box.
 
----> Select any payload in paybox and paste it in burp.
+---> Select any payload in payload box and paste it in burp.
 
 ---> DTD name (Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (Hack is DTD name)
 
@@ -1255,4 +1256,17 @@ Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (first is
 ---> To convert json to XML goto google and search for json to xml converter.
 
 ---> We can do that burp also, In extensions tab we can add this content type converter extension.
+
+
+
+Server Side Request Forgery (SSRF) :-
+-------------------------------------
+
+---> SSRF is a web security vulnerability.
+
+---> Firewall and Load balancer (Internet). Web application, Application Server, Database server (Intranet) --> We are trying to comprimise the intranet components.
+
+---> SSRF attack is designed to target the server.
+
+---> Whenever one application inter connects with other application than we can perform the SSRF.
 
