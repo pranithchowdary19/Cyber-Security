@@ -1160,6 +1160,13 @@ Business Logic vulnerabilities :-
 
 ---> Automation tools cant find the business logic vulnerabilities.
 
+Process To Do :-
+----------------
+
+---> Login to application --> Select tha items and add them to cart --> From cart to go checkout section --> capture the request in BURP --> There we need to try to tamper the price and forward the request.
+
+---> If we successfully tampered the price than application is vulnerable, If not than application is not vulnerable.
+
 
 
 A4 - XML External Entities :-
@@ -1242,13 +1249,35 @@ Process To Do :-
 
 ---> Select any payload in payload box and paste it in burp.
 
----> DTD name (Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (Hack is DTD name)
+---> DTD name - (Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (Hack is DTD name) (First is entity name)
 
----> if any thing in xml if we want to reference than we this symbol (&).
+---> if any thing in xml if we want to refer than we use this symbol (&).
 
 ---> Now check all the entities one by one.
 
 Eg :- <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> ) (first is the entity)
+
+---> Give that entity in element.
+
+Eg :- <?xml version="1.0" encoding="UTF-8"?>
+
+      <!DOCTYPE Hack [<!ENTITY first SYSTEM "File:///etc/shadow">"]> )
+
+      <StockCheck> ---> (Parent Tag)
+
+      <ProductId> ---> (Element.(here we can give the entity))
+
+        &first
+
+      </ProductId>
+
+      <StoreId>  ---> (Element.(here we can give the entity))
+
+         4
+
+      </StoreId>
+
+      </StockCheck>
 
 
 ---> If the application is sending data in json format we can convert json in XML format.
@@ -1270,22 +1299,98 @@ Server Side Request Forgery (SSRF) :-
 
 ---> Whenever one application inter connects with other application than we can perform the SSRF.
 
----> Burp functionality - If we captured the request in burp and send it to repeater, In repeater we did some changes and send it to server and we get response. If we want that see that response in browser there is functionality in burp. (Right click on response ---> Show response in browser ---> We get one URL, Copy that URL and paste it in browser)
+---> Burp functionality - If we captured the request in burp and send it to repeater, In repeater we did some changes and send it to server and we get response. If we want that see that response in browser there is functionality in burp. (Right click on response tab ---> Show response in browser ---> We get one URL, Copy that URL and paste it in browser)
 
 Process To Do :-
 ----------------
 
 ---> Capture the request in burp.
 
----> Check where the URL is going.
+---> Check where the URL is going.(Get method or Post method).
 
 ---> There is feature called collaborator in burp goto that and select copy to clipborad option there we get one link.
 
 ---> Remove the URL and paste the URL from burp collaborator. Add http:// before pasting the URL.
 
+---> If Collaborator feature is not available than use the pipedream Website.
+
 ---> And send the request.
 
 ---> After sending the request goto collabarator and click the poll now option.
 
----> If the type shows DNS than it is not vulnerable, If the type shows HTTP than it is responding than we can say it is vulnerable. 
+---> If the type shows DNS than it is not vulnerable, If the type shows HTTP than it is responding than we can say it is vulnerable.
 
+---> If type shows HTTP than click on that than IP address will appear than copy that IP and goto "whois lookup" website and give that IP and gives all info about that IP address.
+
+
+Common Vulnerability Scoring System (CVSS) :-  Calculator.
+---------------------------------------------
+
+---> It is a framework for measuring and assessing the severity of security vulnerabilities in computer systems, applications, and networks.
+
+---> These three things are very important for application.
+
+1. Confidentiality
+
+2. Integrity
+
+3. Availability
+
+---> These three is called CIA Triad.
+
+
+Tools :-
+--------
+
+OWASP ZAP :-
+------------
+
+---> It is an automated tool.
+
+---> To install Zap tool we need java to be installed first.
+
+---> In zap there are 4 modes
+
+1. Safe Mode
+
+2. Protected Mode
+
+3. Standard Mode
+
+4. Attack Mode
+
+
+---> True Positive - Vulnerablity
+
+---> False Positive - Not a vulnerablity
+
+---> In zap tool if we want to change the risk level,
+
+---> Give a right click on alerts ---> Edit ---> Risk (There we can change the risk level based on requirement)
+
+---> In Zap tool we can directly generate the report.
+
+---> On top of zap we can see a option called report ---> Generate report
+
+---> In Generate report tab we can edit the report based on requirement.
+
+---> In Zap there is a option called Open/Resendwith request editor, It is like a repeater in burp.
+
+---> To get Open/Resendwith request editor option right click and find that option.
+
+---> To do authenticated scanning in zap we need login page. (Any authenticated scanning should be performed on login page).
+
+
+Burp Suite Pro :-
+-----------------
+
+---> In burp there are two modes 
+
+1. Active Mode
+
+2. Passive Mode
+
+
+---> In active mode we have an option called fuzzing.
+
+ 
